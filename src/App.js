@@ -9,10 +9,16 @@ import './App.css'
 const App = () => {
   return (
     <>
-    <nav>
+    <nav
+    style={{
+      background: "rgba(217, 217, 217, 0.01)",
+      boxShadow: "2px 4px 20px 0px rgba(125, 110, 235, 0.5)",
+      backdropFilter: "blur(10px)",
+    }}
+    >
       <div className='header_name'>
       <h1>Mazario</h1></div>
-      <div className='navigations'>
+      <div className='navigations' id='navigation'>
       <Link to='/' className='a'>Home</Link>
       <Link to='/about' className='a'>About</Link>
       <Link to='/contact' className='a'>Contact</Link>

@@ -1,9 +1,13 @@
 
 nav{
   width: 100%;
-  height: 40px;
+  height: 50px;
   display: flex;
   flex-wrap: wrap;
+  position: fixed;
+  background-color: white;
+  z-index: 5;
+  box-shadow: 0 0.5px 15px rgba(0, 0,0, 0.5);
 }
 nav .header_name{
   flex: 1 0 8rem;
@@ -20,15 +24,129 @@ nav .navigations{
 flex:1 0 8rem ;
   gap: 20;
 }
+@media (max-width:550px) {
+  nav .navigations{
+    display: none;
+  }
+}
+
 nav .navigations .a{
+  font-family:  sans-serif;
   text-decoration: none;
   color: black;
   font-size: 18px;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid transparent;
 }
 nav .navigations .a:hover{
   border-bottom: 2.5px solid black;
 }
 nav .navigations .a:focus{
   border-bottom: 2px solid black;
+}
+#book_page{
+  background-image: url('./asset/backgroundImage.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.blurEffect{
+  background-color:rgba(255,255,255,0.1);
+  backdrop-filter:blur(10px)}
+#place_parent_tag{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:1rem;
+  padding:2rem
+}
+#child_tag{
+  position:relative;
+  flex:1 0 8rem;
+  display:flex;
+  padding:10px;flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 -1px 10px rgba(0,0,0,0.5);
+  border-radius:12px
+}
+#Image_tag{
+  height:200px;width:200px;
+  position:relative;
+  border-radius:12px;overflow:hidden}
+ #rating {
+  display:flex;justify-content:center;align-items:center;padding:10px;position:relative;width:100%}
+  .rating{position:absolute;left:-5px;padding:5px;background-color:white;font-size:12px;box-shadow:0 -1px 10px rgba(0,0,0,0.5);text-align:center;border-radius:10px}
+#seats{
+  width: 70%;
+   padding: 10px;
+  display: grid;
+  grid-template-columns: .5fr 1.5fr .5fr 1.5fr .5fr .5fr;
+  grid-row-gap: 20px;
+  border-radius: 15px;
+  border: 2px solid rgba(255,255,255,1);
+  box-shadow: 0 2px 12px 2px rgba(0,0,0,0.8);
+}
+#PersonalDetails #input_container{
+   width: 80%;
+   height: 30px;
+   border-bottom: 2px solid black;
+}
+#PersonalDetails #input_container input{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+}
+input:focus{
+  outline: none;
+}
+#label{display:inline-flex;gap:4px;align-items:center;font-weight: 550;font-size: 1rem;color: rgb(37, 35, 35);}
+  #book_button{
+    margin-top: 20px;
+    height: 40px;
+    width: 150px;
+    background-color: transparent;
+    border: none; 
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #book_button h2{
+    position: absolute;
+    z-index: 5;
+  }
+  #book_button::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: rgb(249,206,52);
+background: linear-gradient(100deg, rgba(249,206,52,1) 0%, rgba(238,42,123,1) 35%, rgba(98,40,215,1) 100%);
+    animation: spin 2s ease-out infinite;
+  }
+  #book_button::after{
+    content: "";
+    position: absolute;
+    height: 93%;
+    left: 1%;
+    top: 2%;
+    right: 1%;
+    bottom: 2%;
+    width: 97%;
+    background-color: white;
+   z-index: 2;
+   border-radius: 15px ;
+  }
+  @keyframes spin {
+    0%{
+      rotate: 0deg;
+    }
+    100%{
+      rotate: 360deg;
+    }
 }
