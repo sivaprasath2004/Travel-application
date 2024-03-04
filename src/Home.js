@@ -22,7 +22,7 @@ const Home = () => {
     </div>
     </div>
     <div id='slogan'>
-    <h2 style={{textAlign:'center'}}>Discover the extraordinary with Mazario: Where every adventure begins</h2>
+    <h2 style={{textAlign:'center',fontSize: 35,fontFamily: "Pacifico",fontWeight: 400,color: "rgb(0, 0, 0)",textShadow:" #ffaf15 2px 2px"}}>Discover the extraordinary with Mazario: Where every adventure begins</h2>
     </div>
     <div id='Heading'>
     <h2 style={{textAlign:'center'}}>Tours & Travels</h2>

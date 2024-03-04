@@ -5,7 +5,6 @@ nav{
   display: flex;
   flex-wrap: wrap;
   position: fixed;
-  background-color: white;
   z-index: 5;
   box-shadow: 0 0.5px 15px rgba(0, 0,0, 0.5);
 }
@@ -14,7 +13,12 @@ nav .header_name{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 23px;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  text-shadow: #ffaf15 2px 2px;
+  font-style: normal;
 }
 nav .navigations{
   display: flex;
