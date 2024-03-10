@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
 import asset from './data'
+import {Link} from 'react-router-dom'
 const Book = () => {
- 
   const [checker,setChecker]=useState({})
-  const [values,setValues]=useState({button:true})
+  const [values,setValues]=useState({button:true,booked:false})
   const [seats,setSeats]=useState([])
   function handleSubmit(){
     if(checker.images){
@@ -38,13 +38,23 @@ const Book = () => {
     }
     return arr
 }
+function handleBook(){
+if(values.Number?.length===10){
+ if(values.name!==undefined && values.date!==undefined && values.reason?.length!==0){
+  setValues(pre=>({...pre,booked:true}))
+ } 
+}
+else{
+  console.log(false)
+}
+}
   return (
-    <div id='book_page' style={{minHeight:'100vh',width:'100%',overflow:'hidden',display:'flex',flexDirection:'column',flexWrap:'wrap',justifyContent:'center',alignItems:'center',backgroundColor:'whitesmoke'}}>
-      <h2 style={{margin:60}}>
+    <div id='book_page' style={{minHeight:'100vh',width:'100%',overflow:'hidden',display:'flex',flexDirection:'column',flexWrap:'wrap',justifyContent:'center',alignItems:'center'  }}>
+      <h2 style={{margin:60}} id='h2'>
         {values.images===undefined?
         'Select Your Vechicle':
         values.place===undefined?
-        'Select Your place':values.car===undefined && values.seats===undefined?`select your ${asset.images[checker.images-1]?.alt==='car'?'CAR':"SEAT"}`:'Fill your Details'
+        'Select Your place':values.car===undefined && values.seats===undefined?`Select Your ${asset.images[checker.images-1]?.alt==='car'?'CAR':"SEAT"}`:values.booked?"Booked":'Fill Your Details'
 }
         </h2>
      {
@@ -53,8 +63,9 @@ const Book = () => {
       {
         asset.images.map((item,index)=>(
           <div 
+          key={`parent_tag${index}`}
           onClick={()=>setChecker(pre=>({...pre,images:index+1}))}
-          style={{height:300,width:300,marginTop:30,padding:20,borderRadius:12,overflow:'hidden',boxShadow:'0 0px 8px rgba(0,0,0,0.5)',border:checker.images-1===index?'5px solid cyan':'5px solid rgba(255,255,255,0.4)'}} key={`parentTage${index}`} className='blurEffect'>
+          style={{height:300,width:300,marginTop:30,padding:20,borderRadius:12,overflow:'hidden',boxShadow:'0 0px 8px rgba(0,0,0,0.5)',border:checker.images-1===index?'5px solid cyan':'5px solid rgba(255,255,255,0.4)'}} className='blurEffect'>
           <img src={item.src} style={{height:'100%',width:'100%',objectFit:'contain',}} alt={item.alt}  key={`image${index}`}/>
           </div>
         ))
@@ -82,7 +93,7 @@ const Book = () => {
      {checker.flightSeats.map((item, index) => (
        <h2 key={`seats${index}`} 
        onClick={()=>(seats.find(ele=>ele===item)?setSeats(seats.filter(ele=>ele!==item)):setSeats(pre=>[...pre,item]))}
-       style={{height:50,width:50,backgroundColor:seats.find(ele=>ele===item)?'lightgreen':'white',border:seats.find(ele=>ele===item)?'2px solid green':'2px solid transparent',borderRadius:5,display:'flex',justifyContent:'center',alignItems:'center',fontSize:16,boxShadow:'0 0 12px rgba(0,0,0,0.5)',cursor:'pointer'}}>
+       style={{backgroundColor:seats.find(ele=>ele===item)?'lightgreen':'white',border:seats.find(ele=>ele===item)?'2px solid green':'2px solid transparent',borderRadius:5,display:'flex',justifyContent:'center',alignItems:'center',fontSize:16,boxShadow:'0 0 12px rgba(0,0,0,0.5)',cursor:'pointer'}}>
          {item<10?'0'+item:item}
        </h2>
       
@@ -102,13 +113,15 @@ const Book = () => {
    </div>:<></>
 }
    </>
-    :<div id='PersonalDetails' style={{width:500,padding:20,minHeight:400,display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',gap:'2rem',borderRadius:12,boxShadow:'0 -2px 15px 2px rgba(0,0,0,0.5)',border:'3px solid white'}} className='blurEffect'>
-      <div id='input_container'><input type='text' placeholder='Enter Your name' style={{fontSize:20}}/></div>
-      <div id='input_container'><input type='text' placeholder='Phone Number' style={{fontSize:20}}/></div>
-      <div id='input_container'><input type='date' style={{fontSize:20}}/></div>
+    :
+    !values.booked?
+    <div id='PersonalDetails' className='blurEffect'>
+      <div id='input_container'><input type='text' onChange={(e)=>setValues(pre=>({...pre,name:e.target.value}))} placeholder='Enter Your name' style={{fontSize:20}}/></div>
+      <div id='input_container'><input type='text' onChange={(e)=>setValues(pre=>({...pre,Number:e.target.value}))} placeholder='Phone Number' style={{fontSize:20}}/></div>
+      <div id='input_container'><input type='date' onChange={(e)=>setValues(pre=>({...pre,date:e.target.value}))} style={{fontSize:20}}/></div>
       <div id='input_container' style={{border:'none'}}>
         <h3>Select Your Reason:</h3>
-        <div style={{display:'flex',width:'100%',justifyContent:'space-evenly',padding:20}}>
+        <div style={{display:'flex',width:'100%',justifyContent:'space-evenly',padding:20}} className='gap'>
         <label id='label' htmlFor='Reason'>
        <input type='radio' name='Reason' value={()=>setValues(pre=>({...pre,reason:'Education'}))}/>
         Education</label> 
@@ -123,9 +136,17 @@ const Book = () => {
         other</label> 
         </div>
      </div>
-     <button id='book_button'>
+     <button id='book_button' onClick={()=>handleBook()}>
      <h2>Book</h2>
      </button>
+    </div>
+    :
+    <div id='PersonalDetail' className='blurEffect'>
+     <img src='https://cdn-icons-png.flaticon.com/128/5610/5610944.png' alt='booked' style={{height:100,width:100}}/>
+      <h2>booked Successfully</h2>
+      <Link to='/'
+      style={{height:40,width:120,backgroundColor:'black',display:'flex',justifyContent:'center',alignItems:'center',color:'white',fontWeight:900,textDecoration:'none',borderRadius:15}}
+      >Home</Link>
     </div>
 } 
 {values.button?

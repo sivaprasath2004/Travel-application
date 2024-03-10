@@ -20,7 +20,7 @@ nav .header_name{
   text-shadow: #ffaf15 2px 2px;
   font-style: normal;
 }
-nav .navigations{
+nav .navigations,#navigation{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,29 +28,25 @@ nav .navigations{
 flex:1 0 8rem ;
   gap: 20;
 }
-@media (max-width:550px) {
-  nav .navigations{
-    display: none;
-  }
-}
 
-nav .navigations .a{
+nav .navigations .a,#navigation a{
   font-family:  sans-serif;
   text-decoration: none;
   color: black;
   font-size: 18px;
   border-bottom: 2px solid transparent;
 }
-nav .navigations .a:hover{
+nav .navigations .a:hover,#navigation .a:hover{
   border-bottom: 2.5px solid black;
 }
-nav .navigations .a:focus{
+nav .navigations .a:focus,#navigation .a:focus{
   border-bottom: 2px solid black;
 }
-#book_page{
-  background-image: url('./asset/backgroundImage.jpg');
+#book_page,#About_page{
+  background-image: url('./asset/background_Image.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position-y: bottom;
+  background-size: contain;
 }
 .blurEffect{
   background-color:rgba(255,255,255,0.1);
@@ -90,6 +86,16 @@ nav .navigations .a:focus{
   border: 2px solid rgba(255,255,255,1);
   box-shadow: 0 2px 12px 2px rgba(0,0,0,0.8);
 }
+#seats h2{
+  height: 50px;
+  width: 50px;
+}
+#PersonalDetails,#PersonalDetail{
+  padding:20px;min-height:400px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;border-radius:12px;box-shadow:0 -2px 15px 2px rgba(0,0,0,0.5);border:3px solid white
+}
+#PersonalDetail{
+  width: 400px;
+}
 #PersonalDetails #input_container{
    width: 80%;
    height: 30px;
@@ -103,6 +109,9 @@ nav .navigations .a:focus{
 }
 input:focus{
   outline: none;
+}
+#navigation_button{
+  display: none;
 }
 #label{display:inline-flex;gap:4px;align-items:center;font-weight: 550;font-size: 1rem;color: rgb(37, 35, 35);}
   #book_button{
@@ -153,4 +162,104 @@ background: linear-gradient(100deg, rgba(249,206,52,1) 0%, rgba(238,42,123,1) 35
     100%{
       rotate: 360deg;
     }
+}
+.navigations{
+  display: block;
+}
+.gap{
+  gap: 1rem;
+}
+@media (max-width:500px) {
+  .nav{
+    display: none;
+  }
+  #navigation{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    height:70vh;
+    z-index:-1;
+    width: 70%;
+    padding-top: 60px;
+    background-color:rgba(255,255,255,.9);
+    backdrop-filter: blur(50px);
+  }
+  #navigation_button{
+    display: block;
+  }
+  #navigation_button{
+    position:relative;
+    height: 3px;
+    width: 30px;
+    background-color: black ;
+    top: 30%;
+    left: 2%;
+  }
+  #navigation_button::before{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 20px;
+    background-color: black ;
+    top: 8px;
+    left: 2%;
+  }
+  #navigation_button::after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 10px;
+    background-color: black ;
+    top: 15px;
+    left: 2%;
+  }
+  #close_navigation{
+    position:relative;
+    height: 3px;
+    width: 20px;
+    background-color: black ;
+    top: 50%;
+    left: 2%;
+    rotate: 45deg;
+  }
+  #close_navigation::after{
+    content: "";
+    position:absolute;
+    height: 3px;
+    width: 20px;
+    background-color: black ;
+    top: 15%;
+    left: 1%;
+    rotate: 83deg;
+  }
+  #book_page,#About_page{
+    background-image: url('./asset/mon.avif');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover; /* This will ensure the image covers the entire background */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  }
+  #seats{
+    width: 90%;
+    grid-column-gap: 4px;
+    margin-bottom: 20px;
+  }
+  #seats h2{
+    height: 35px;
+    width: 35px;
+  }
+  .gap{
+    gap: 10px;
+  }
+  #PersonalDetail{
+    width: 90%;
+  }
+}
+@media (max-width:370px){
+  #PersonalDetails{
+    width: 95%;
+  }
 }

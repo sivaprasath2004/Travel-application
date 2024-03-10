@@ -1,0 +1,15 @@
+#first_tag{
+    flex:1 0 20rem;display:flex;flex-direction:column;justify-content:center;align-items:center;
+    
+}
+
+#parent_About_page{
+   margin: 10px;
+   padding: 20px;
+   border-radius: 20px;
+   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+   background-color: rgba(255, 255, 255, 0.5);
+display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+backdrop-filter: blur(2px);
+}
+#second_tag{flex:1 0 10rem;display: flex;justify-content:center;align-items:center}
