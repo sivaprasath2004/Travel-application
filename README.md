@@ -10,10 +10,13 @@ The Travel Application is a web application built with ReactJS that allows users
 - **User Profile:** Manage personal information, booking history, and preferences.
 
 ## Technologies Used
+[![Git](https://img.shields.io/badge/-Git-black?style=flat&logo=git&link=https://github.com/BRdhanani)](https://github.com/BRdhanani) 
 
-- ReactJS
-- React Router
+[![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat&logo=javascript&link=https://github.com/BRdhanani)](https://github.com/BRdhanani) 
 
+[![React](https://img.shields.io/badge/-React-black?style=flat&logo=react&link=https://github.com/BRdhanani)](https://github.com/BRdhanani) 
+
+[![JSON](https://img.shields.io/badge/-json-02569B?style=flat&logo=json&link=https://github.com/BRdhanani)](https://github.com/BRdhanani)
 ## Link
 <a href="https://celebrated-salamander-e58ed5.netlify.app/">Click Here🚀</a>
 ## Installation
