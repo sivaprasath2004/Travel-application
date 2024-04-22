@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Travel-application/static/css/main.211ee689.css",
+    "main.js": "/Travel-application/static/js/main.fb2cb921.js",
+    "static/media/hondacar.png": "/Travel-application/static/media/hondacar.00abdb82c5656bfc83bc.png",
+    "static/media/mon.avif": "/Travel-application/static/media/mon.a1e7b299b2a9e05251c9.avif",
+    "static/media/i30n.png": "/Travel-application/static/media/i30n.1301b99dc0841eac52b0.png",
+    "static/media/background_Image.jpg": "/Travel-application/static/media/background_Image.8a8568e50ca7ac43d89c.jpg",
+    "static/media/car.png": "/Travel-application/static/media/car.3ca800ba32d6e808f308.png",
+    "static/media/golf.png": "/Travel-application/static/media/golf.01ba302ddd5d77ba41fa.png",
+    "static/media/toyota.png": "/Travel-application/static/media/toyota.0a136bd418abe490b832.png",
+    "static/media/totyotosienna.png": "/Travel-application/static/media/totyotosienna.801a4b9ebe340cb80e16.png",
+    "static/media/ford.png": "/Travel-application/static/media/ford.bd320edaaade0ab81cf2.png",
+    "static/media/boat.png": "/Travel-application/static/media/boat.e6921581df22def43a7f.png",
+    "static/media/yaris.png": "/Travel-application/static/media/yaris.1e8feabcf3e7e7e23a07.png",
+    "static/media/Tata.png": "/Travel-application/static/media/Tata.f80b49204e202291d7bc.png",
+    "static/media/bus.png": "/Travel-application/static/media/bus.397c3b53f90520172401.png",
+    "static/media/flights.png": "/Travel-application/static/media/flights.98e4960ffd59114166a7.png",
+    "index.html": "/Travel-application/index.html",
+    "main.211ee689.css.map": "/Travel-application/static/css/main.211ee689.css.map",
+    "main.fb2cb921.js.map": "/Travel-application/static/js/main.fb2cb921.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.211ee689.css",
+    "static/js/main.fb2cb921.js"
+  ]
+}
